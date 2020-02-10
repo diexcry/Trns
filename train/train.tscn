@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="train" type="KinematicBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
