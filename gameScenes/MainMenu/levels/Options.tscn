@@ -14,3 +14,4 @@ text = "Options Scene"
 
 [node name="Button" parent="CenterContainer/VBoxContainer" index="1"]
 margin_right = 312.0
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
