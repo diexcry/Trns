@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/string.gd" type="Script" id=1]
+
+[node name="string" type="Button"]
+margin_left = -13.9668
+margin_top = -14.7018
+margin_right = -1.96677
+margin_bottom = 5.29816
+rect_scale = Vector2( 2.64, 1.52 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="." to="." method="_on_string_button_up"]

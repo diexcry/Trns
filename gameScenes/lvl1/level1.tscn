@@ -1,34 +1,53 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://gameScenes/lvl1/level1.gd" type="Script" id=1]
 [ext_resource path="res://objects/station.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/railwayRoute.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UIScenes/MainUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/string.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, 470.479, -15.7492 )
+"points": PoolVector2Array( 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, 220.777, 0.0506363 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 340.388, 91.5493, 0, 0, 0, 0, 708.704, 96.3326 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1.18512, -0.653297, 0, 0, 0, 0, 427.217, 158.014 )
 }
 
 [node name="level1" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="station1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 267.654, 386.905 )
+position = Vector2( 115.333, 90.1969 )
 
 [node name="station2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 765.86, 246.453 )
 
-[node name="station3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 590.958, 76.851 )
-
 [node name="station4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 119.252, 90.1012 )
+position = Vector2( 706.322, 93.2745 )
 
 [node name="railwayRoute1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120.759, 89.7365 )
 curve = SubResource( 1 )
 
 [node name="railwayRoute2" parent="." instance=ExtResource( 3 )]
+curve = SubResource( 3 )
+
+[node name="railwayRoute3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 342.722, 92.0271 )
+curve = SubResource( 2 )
 
 [node name="MainUI" parent="." instance=ExtResource( 4 )]
+
+[node name="string" parent="." instance=ExtResource( 5 )]
+margin_left = 332.824
+margin_top = 76.1812
+margin_right = 344.824
+margin_bottom = 96.1812
