@@ -11,12 +11,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, 220.777, 0.0506363 )
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 340.388, 91.5493, 0, 0, 0, 0, 708.704, 96.3326 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1.18512, -0.653297, 0, 0, 0, 0, 427.217, 158.014 )
 }
@@ -38,11 +38,11 @@ position = Vector2( 120.759, 89.7365 )
 curve = SubResource( 1 )
 
 [node name="railwayRoute2" parent="." instance=ExtResource( 3 )]
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 
 [node name="railwayRoute3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 342.722, 92.0271 )
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 
 [node name="MainUI" parent="." instance=ExtResource( 4 )]
 
