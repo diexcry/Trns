@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UIScenes/MainUI.gd" type="Script" id=1]
+[ext_resource path="res://UIScenes/Images/message_icon.png" type="Texture" id=2]
+[ext_resource path="res://UIScenes/Images/message_window.png" type="Texture" id=3]
+[ext_resource path="res://UIScenes/Button.gd" type="Script" id=4]
 
 [node name="MainUI" type="Control"]
 anchor_right = 1.0
@@ -18,3 +21,33 @@ margin_bottom = 519.598
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Messages" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="NinePatchRect" parent="Messages"]
+margin_left = 66.4128
+margin_top = 48.8532
+margin_right = 122.413
+margin_bottom = 88.8532
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="Messages/icon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Messages"]
+visible = false
+position = Vector2( 512.866, 239.401 )
+scale = Vector2( 0.0771387, 0.0938986 )
+texture = ExtResource( 3 )
+[connection signal="pressed" from="Messages/icon/Button" to="." method="_on_Button_pressed"]
