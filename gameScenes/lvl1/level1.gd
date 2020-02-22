@@ -4,6 +4,7 @@ var graph
 func setGraph():
 	graph = [
 		{
+			'color':null,
 			'type':'station',
 			'forward':get_node("railwayRoute1/Path"),
 			'nextNode': 1,
@@ -13,24 +14,59 @@ func setGraph():
 			'y': 0,
 		},
 		{
-			'type':'station',
+			'type':'string',
+			'color':null,
+			'buttonNode':get_node("string"),
 			'forward':get_node("railwayRoute2/Path"),
+			'turn':get_node("railwayRoute3/Path"),
+			'turned':false,
 			'backward':get_node("railwayRoute1/Path"),
 			'nextNode': 2,
 			'prevNode': 0,
+			'turnNode': 3,
 			'x': 0,
 			'y': 0,
 		},
 		{
 			'type':'station',
-			'forward':null,
+			'color':null,
+			'forward':get_node("railwayRoute4/Path"),
 			'backward':get_node("railwayRoute2/Path"),
+			'nextNode': 4,
+			'prevNode': 1,
+			'x': 0,
+			'y': 0,
+		},
+		{
+			'type':'station',
+			'color':'blue',
+			'forward':null,
+			'backward':get_node("railwayRoute3/Path"),
 			'nextNode': null,
 			'prevNode': 1,
 			'x': 0,
 			'y': 0,
+		},
+		{
+			'type':'station',
+			'color':null,
+			'forward':null,
+			'backward':get_node("railwayRoute4/Path"),
+			'nextNode': null,
+			'prevNode': 2,
+			'x': 0,
+			'y': 0,
 		}
 	]
+	
+var trainList = []
+func rmTrain(instns):
+	trainList.remove(trainList.find(instns))
+	if trainList.size() == 0:
+		var gameOver = load("res://gameScenes/MainMenu/MainMenu.tscn").instance()
+		get_parent().add_child(gameOver)
+		queue_free()
+		
 func set_train(node_index):
 	var train = preload("res://objects/train/train.tscn").instance()
 	graph[node_index]['forward'].add_child(train)
@@ -39,6 +75,8 @@ func set_train(node_index):
 	train.position.x = graph[node_index]['x']
 	train.position.y = graph[node_index]['y']
 	train.meInstance = train
+	train.color = 'blue'
+	trainList.append(train)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
