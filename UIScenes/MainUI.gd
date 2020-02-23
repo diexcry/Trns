@@ -4,8 +4,10 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-func get_speed_instance():
-	return $"SpeedScroll"
+var COLOR = null
+func get_speed_instance(color):
+	if color == COLOR:
+		return $"SpeedScroll"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

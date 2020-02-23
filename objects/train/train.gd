@@ -12,7 +12,7 @@ var SpeedBar
 var color
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SpeedBar = $"../../../MainUI".get_speed_instance()
+	SpeedBar = $"../../../MainUI".get_speed_instance(color)
 	pass
 
 func checkStation(node):
@@ -52,7 +52,7 @@ func reFollow(node,route):
 var speed
 var goesForward = true
 func _process(delta):
-	speed = SpeedBar.value
+	speed = SpeedBar.get_speed(color)
 	get_parent().offset += speed
 	if get_parent().get_unit_offset() == 1:
 		if next_node != null:
@@ -71,4 +71,7 @@ func _process(delta):
 			
 			
 
-	
+
+
+func _on_Button_button_down():
+	$"../../../MainUI".COLOR = color

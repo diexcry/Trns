@@ -49,7 +49,7 @@ func setGraph():
 		},
 		{
 			'type':'station',
-			'color':null,
+			'color':'red',
 			'forward':null,
 			'backward':get_node("railwayRoute4/Path"),
 			'nextNode': null,
@@ -67,7 +67,7 @@ func rmTrain(instns):
 		get_parent().add_child(gameOver)
 		queue_free()
 		
-func set_train(node_index):
+func set_train(node_index,TRAIN_COLOR):
 	var train = preload("res://objects/train/train.tscn").instance()
 	graph[node_index]['forward'].add_child(train)
 	train.next_node = graph[node_index]
@@ -75,13 +75,14 @@ func set_train(node_index):
 	train.position.x = graph[node_index]['x']
 	train.position.y = graph[node_index]['y']
 	train.meInstance = train
-	train.color = 'blue'
+	train.color = TRAIN_COLOR
 	trainList.append(train)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setGraph()
-	set_train(0)
+	set_train(0,'blue')
+	set_train(1,'red')
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
