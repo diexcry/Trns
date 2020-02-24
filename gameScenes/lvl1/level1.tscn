@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=11 format=2]
+
 
 [ext_resource path="res://gameScenes/lvl1/level1.gd" type="Script" id=1]
 [ext_resource path="res://objects/station.tscn" type="PackedScene" id=2]
@@ -6,6 +8,7 @@
 [ext_resource path="res://UIScenes/MainUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/string.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gameScenes/lvl1/images/mainRoute.png" type="Texture" id=6]
+
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -75,3 +78,9 @@ margin_right = 365.921
 margin_bottom = 243.861
 
 [node name="MainUI" parent="." instance=ExtResource( 4 )]
+
+[node name="string" parent="." instance=ExtResource( 5 )]
+margin_left = 353.921
+margin_top = 223.861
+margin_right = 365.921
+margin_bottom = 243.861

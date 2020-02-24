@@ -12,3 +12,16 @@ script = ExtResource( 1 )
 position = Vector2( 11.3875, 1.62677 )
 texture = ExtResource( 2 )
 normal_map = SubResource( 1 )
+scale = Vector2( 0.0356918, 30.2819 )
+texture = SubResource( 2 )
+normal_map = SubResource( 3 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = -18.0
+margin_top = -9.0
+margin_right = 41.0
+margin_bottom = 13.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
