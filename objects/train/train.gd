@@ -68,10 +68,6 @@ func _process(delta):
 			reFollow(prev_node,'back')
 			next_node = getPrevNode(next_node)
 			prev_node = getPrevNode(next_node)
-			
-			
-
-
 
 func _on_Button_button_down():
 	$"../../../MainUI".COLOR = color

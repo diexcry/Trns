@@ -49,6 +49,7 @@ func setGraph():
 		},
 		{
 			'type':'station',
+
 			'color':'red',
 			'forward':null,
 			'backward':get_node("railwayRoute4/Path"),
@@ -67,6 +68,7 @@ func rmTrain(instns):
 		get_parent().add_child(gameOver)
 		queue_free()
 		
+
 func set_train(node_index,TRAIN_COLOR):
 	var train = preload("res://objects/train/train.tscn").instance()
 	graph[node_index]['forward'].add_child(train)

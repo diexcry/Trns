@@ -44,6 +44,7 @@ alignment = 1
 [node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
 margin_top = 90.0
 margin_bottom = 146.0
+scene_to_load = "res://gameScenes/lvl1/level1.tscn"
 
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
 margin_top = 150.0
