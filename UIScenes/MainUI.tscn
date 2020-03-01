@@ -1,13 +1,10 @@
-
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UIScenes/MainUI.gd" type="Script" id=1]
 [ext_resource path="res://UIScenes/Images/message_icon.png" type="Texture" id=2]
 [ext_resource path="res://UIScenes/Images/message_window.png" type="Texture" id=3]
 [ext_resource path="res://UIScenes/Button.gd" type="Script" id=4]
 [ext_resource path="res://UIScenes/Images/скорости-ползунок-1.png" type="Texture" id=5]
-[ext_resource path="res://UIScenes/SpeedScroll.gd" type="Script" id=2]
-
 
 [node name="MainUI" type="Control"]
 anchor_right = 1.0
@@ -93,7 +90,6 @@ margin_top = 99.0
 margin_right = 623.0
 margin_bottom = 119.0
 text = "spawn"
-
 __meta__ = {
 "_edit_use_anchors_": false
 }
