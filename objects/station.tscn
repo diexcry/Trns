@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="GradientTexture" id=1]
+[ext_resource path="res://gameScenes/lvl1/images/station.png" type="Texture" id=1]
 
 [node name="station" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1.32502, -4.76837e-05 )
-scale = Vector2( 0.0359981, 75.2009 )
-texture = SubResource( 1 )
+position = Vector2( 0.711143, 1.22768 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
