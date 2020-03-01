@@ -75,13 +75,13 @@ func set_train(node_index):
 	train.position.x = graph[node_index]['x']
 	train.position.y = graph[node_index]['y']
 	train.meInstance = train
-	train.color = 'blue'
+	train.color = "blue"
 	trainList.append(train)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setGraph()
-	set_train(0)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

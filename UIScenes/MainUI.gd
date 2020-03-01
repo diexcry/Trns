@@ -8,9 +8,15 @@ func get_speed_instance():
 
 
 
-func _on_Button_pressed() :
+func _on_icon_pressed() :
 	$Messages/Window/.visible = !$Messages/Window/.visible
 
 
 
 
+
+
+func _on_spawn_pressed():
+	var train = preload("res://objects/train/train.tscn").instance()
+	train.meInstance = train
+	train.color = "blue"

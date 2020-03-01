@@ -57,7 +57,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Messages/icon"]
+[node name="icon" type="Button" parent="Messages/icon"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 flat = true
@@ -67,7 +67,6 @@ __meta__ = {
 }
 
 [node name="Window" type="Control" parent="Messages"]
-visible = false
 margin_left = 204.0
 margin_top = 72.0
 margin_right = 888.0
@@ -93,4 +92,5 @@ text = "spawn"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Messages/icon/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Messages/icon/icon" to="." method="_on_icon_pressed"]
+[connection signal="pressed" from="Messages/Window/spawn" to="." method="_on_spawn_pressed"]
