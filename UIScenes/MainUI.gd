@@ -5,7 +5,6 @@ var color = null
 func get_speed_instance():
 	return $"SpeedScroll"
 func set_speed_zero():
-	$"SpeedScroll".visible = true
 	$"SpeedScroll".value = 0;
 func get_speed_value(tr_color):
 	if color == tr_color:
@@ -14,6 +13,7 @@ func get_speed_value(tr_color):
 		return 0
 func _ready():
 	$"SpeedScroll".visible = false
+	$"NinePatchRect".visible = false
 
 func _on_Button_pressed() :
 	$Messages/Window/.visible = !$Messages/Window/.visible

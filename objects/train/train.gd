@@ -71,6 +71,7 @@ func _process(delta):
 			prev_node = getPrevNode(next_node)
 		elif next_node == null or next_node['forward'] == null:
 			forward = false
+			$"../../MainUI".set_speed_zero()
 			checkStation(next_node)
 	elif get_unit_offset() == 0:
 		if prev_node != null && prev_node['backward'] != null:
@@ -80,6 +81,7 @@ func _process(delta):
 			prev_node = getPrevNode(next_node)
 		elif prev_node == null or prev_node['backward'] == null:
 			forward = true
+			$"../../MainUI".set_speed_zero()
 			checkStation(prev_node)
 			
 			
@@ -89,6 +91,8 @@ func _process(delta):
 
 func _on_Button_button_down():
 	var t = $"../../MainUI"
+	$"../../MainUI/SpeedScroll".visible = true
+	$"../../MainUI/NinePatchRect".visible = true
 	t.set_speed_zero()
 	t.color = color
 
