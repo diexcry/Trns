@@ -9,22 +9,22 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, 220.777, 0.0506363 )
+"points": PoolVector2Array( 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, 445.931, 1.89914 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 340.388, 91.5493, 0, 0, 0, 0, 704.3, 92.6938, 0, 0, 0, 0, 707.834, 92.8546 )
+"points": PoolVector2Array( 0, 0, 0, 0, 595.087, 92.3652, 0, 0, 0, 0, 709.464, 93.7971 )
 }
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1.18512, -0.653297, 0, 0, 0, 0, 250.181, 2.29401, 0, 0, 0, 0, 252.473, 4.29714, 0, 0, 0, 0, 435.591, 153.796 )
+"points": PoolVector2Array( 0, 0, 0, 0, 250.181, 2.29401, 0, 0, 0, 0, 252.473, 4.29714, 0, 0, 0, 0, 435.591, 153.796 )
 }
 
 [sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( -167.018, -5.27426, 167.018, 5.27426, 365.695, 0.81398, 0, 0, 0, 0, 553.868, 3.90833, 0, 0, 0, 0, 585.744, -8.29282, 0, 134.656, 0, -134.656, 609.046, -161.725 )
+"points": PoolVector2Array( -218.569, 1.8856, 218.569, -1.8856, 365.695, 0.81398, 1.43197, 221.956, -1.43197, -221.956, 609.33, -164.339 )
 }
 
 [node name="level1" type="Node2D"]
@@ -44,10 +44,10 @@ __meta__ = {
 position = Vector2( 162.908, 239.497 )
 
 [node name="station2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 800.225, 392.805 )
+position = Vector2( 738.65, 241.016 )
 
 [node name="station4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 727.741, 240.793 )
+position = Vector2( 805.068, 392.582 )
 
 [node name="station5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 971.787, 78.3047 )
@@ -59,7 +59,7 @@ curve = SubResource( 1 )
 [node name="railwayRoute2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 20.5607, 147.679 )
 scale = Vector2( 1.00158, 1 )
-curve = SubResource( 2 )
+curve = SubResource( 5 )
 
 [node name="railwayRoute3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 363.819, 237.827 )
@@ -71,9 +71,9 @@ position = Vector2( 363.819, 239.706 )
 curve = SubResource( 4 )
 
 [node name="string" parent="." instance=ExtResource( 5 )]
-margin_left = 353.921
+margin_left = 601.652
 margin_top = 223.861
-margin_right = 365.921
+margin_right = 613.652
 margin_bottom = 243.861
 
 [node name="MainUI" parent="." instance=ExtResource( 4 )]
