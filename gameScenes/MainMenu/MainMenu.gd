@@ -6,4 +6,6 @@ func _ready():
 
 func _on_Button_pressed(scene_to_load):
 # warning-ignore:return_value_discarded
-	get_tree().change_scene(scene_to_load)
+	var game = load("res://gameScenes/lvl1/level1.tscn").instance()
+	get_parent().add_child(game)
+	queue_free()
