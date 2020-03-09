@@ -1,8 +1,9 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
 
 [node name="railwayRoute" type="Path2D"]
-
-[node name="Path" type="PathFollow2D" parent="."]
-position = Vector2( 346.297, 91.3738 )
-rotation = -0.0388152
-loop = false
+curve = SubResource( 1 )

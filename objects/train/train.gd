@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends PathFollow2D
 
 
 # Declare member variables here. Examples:
@@ -9,38 +9,44 @@ var next_node
 var prev_node
 var meInstance
 var SpeedBar
+var forward
 var color
+
+func chdir():
+	if forward:
+		forward = false
+	else:
+		forward = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SpeedBar = $"../../../MainUI".get_speed_instance()
+	SpeedBar = $"../../MainUI" #.instance()
 	pass
 
 func checkStation(node):
-	if node['color'] != null:
+	if node != null && node['color'] != null:
 		if node['color']  == color:
-			$"../../..".rmTrain(meInstance)
+			$"../..".rmTrain(meInstance)
 			queue_free()
 
 func getNextNode(node):
 	if node['type'] == 'station':
-
-		return $"../../..".graph[node['nextNode']]
+		return $"../..".graph[node['nextNode']]
 	if node['type'] == 'string':
 		if node['turned'] == true:
-			return $"../../..".graph[node['turnNode']]
+			return $"../..".graph[node['turnNode']]
 		else:
-			return $"../../..".graph[node['nextNode']]
+			return $"../..".graph[node['nextNode']]
 func getPrevNode(node):
-	if node['type'] == 'station':
-		return $"../../..".graph[node['prevNode']]
+	if node['type'] == 'station' or node['type'] == 'string':
+			return $"../..".graph[node['prevNode']]
 func setRailwayFollow(node):
 	meInstance.get_parent().remove_child(meInstance)
 	node.add_child(meInstance)
 
-func reFollow(node,route):
-	if route == 'back':
+func reFollow(node):
+	if !forward:
 		setRailwayFollow(node['backward'])
-	elif route == 'front':
+	elif forward:
 		if node['type'] == 'station':
 			setRailwayFollow(node['forward'])
 		if node['type'] == 'string' and node['turned'] == false:
@@ -52,23 +58,41 @@ func reFollow(node,route):
 var speed
 var goesForward = true
 func _process(delta):
-	speed = SpeedBar.value
-	get_parent().offset += speed
-	if get_parent().get_unit_offset() == 1:
-		if next_node != null:
-			checkStation(next_node)
+	speed = SpeedBar.get_speed_value(color)
+	if forward:
+		offset += speed
+	else:
+		offset -= speed
+	if get_unit_offset() == 1:
 		if next_node != null && next_node['forward'] != null:
-			reFollow(next_node,'front')
+			reFollow(next_node)
+			set_unit_offset(0)
 			next_node = getNextNode(next_node)
 			prev_node = getPrevNode(next_node)
-	elif get_parent().get_unit_offset() == 0:
-		if prev_node != null:
-			checkStation(prev_node)
+		elif next_node == null or next_node['forward'] == null:
+			forward = false
+			$"../../MainUI".set_speed_zero()
+			checkStation(next_node)
+	elif get_unit_offset() == 0:
 		if prev_node != null && prev_node['backward'] != null:
-			reFollow(prev_node,'back')
+			reFollow(prev_node)
+			set_unit_offset(1)
 			next_node = getPrevNode(next_node)
 			prev_node = getPrevNode(next_node)
+		elif prev_node == null or prev_node['backward'] == null:
+			forward = true
+			$"../../MainUI".set_speed_zero()
+			checkStation(prev_node)
 			
 			
 
 	
+
+
+func _on_Button_button_down():
+	var t = $"../../MainUI"
+	$"../../MainUI/SpeedScroll".visible = true
+	$"../../MainUI/NinePatchRect".visible = true
+	t.set_speed_zero()
+	t.color = color
+
