@@ -12,7 +12,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, -5.08543, -0.0548401, 0, 0, 0, 0, 445.931, 1.89914 )
 }
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 595.087, 92.3652, 0, 0, 0, 0, 709.464, 93.7971 )
 }
@@ -59,7 +59,7 @@ curve = SubResource( 1 )
 [node name="railwayRoute2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 20.5607, 147.679 )
 scale = Vector2( 1.00158, 1 )
-curve = SubResource( 5 )
+curve = SubResource( 2 )
 
 [node name="railwayRoute3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 363.819, 237.827 )

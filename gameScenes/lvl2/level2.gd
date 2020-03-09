@@ -93,8 +93,8 @@ func setGraph():
 			'color':null,
 			'me': get_node("string"),
 			'buttonNode':get_node("string"),
-			'forward':get_node("railwayRoute2/"),
-			'turn':get_node("railwayRoute3/"),
+			'forward':get_node("railwayRoute3/"),
+			'turn':get_node("railwayRoute2/"),
 			'turned':false,
 			'backward':get_node("railwayRoute1/"),
 			'nextNode': 2,
@@ -103,15 +103,28 @@ func setGraph():
 		},
 		{
 			'type':'station',
-			'arrival': true,
+			'arrival': false,
 			'dest': false,
 			'rightEnd': true,
 			'me': get_node("station2"),
 			'color':null,
-			'forward':get_node("railwayRoute4/"),
+			'forward':null,
 			'backward':get_node("railwayRoute2/"),
-			'nextNode': 4,
+			'nextNode': null,
 			'prevNode': 1,
+		},
+		{
+			'type':'string',
+			'color':null,
+			'me': get_node("string2"),
+			'buttonNode':get_node("string2"),
+			'forward':get_node("railwayRoute4/"),
+			'turn':get_node("railwayRoute5/"),
+			'turned':false,
+			'backward':get_node("railwayRoute3/"),
+			'nextNode': 5,
+			'prevNode': 1,
+			'turnNode': 4,
 		},
 		{
 			'type':'station',
@@ -120,9 +133,9 @@ func setGraph():
 			'me': get_node("station4"),
 			'arrival': false,
 			'forward':null,
-			'backward':get_node("railwayRoute3/"),
+			'backward':get_node("railwayRoute5/"),
 			'nextNode': null,
-			'prevNode': 1,
+			'prevNode': 2,
 		},
 		{
 			'type':'station',
@@ -143,7 +156,7 @@ var trainList = []
 func rmTrain(instns):
 	trainList.remove(trainList.find(instns))
 	if trainList.size() == 0:
-		var gameOver = load("res://gameScenes/lvl2/level2.tscn").instance()
+		var gameOver = load("res://gameScenes/MainMenu/MainMenu.tscn").instance()
 		get_parent().add_child(gameOver)
 		queue_free()
 		
