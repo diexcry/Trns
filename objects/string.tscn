@@ -1,6 +1,29 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://objects/string.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+var nodeNum = 1
+func _on_string_button_up():
+	if get_parent().graph[1]['turned'] == true:
+		get_parent().graph[1]['turned'] = false
+	else:
+		get_parent().graph[1]['turned'] = true
+"
 
 [node name="string" type="Button"]
 margin_left = -13.9668
@@ -8,7 +31,7 @@ margin_top = -14.7018
 margin_right = -1.96677
 margin_bottom = 5.29816
 rect_scale = Vector2( 2.64, 1.52 )
-script = ExtResource( 1 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

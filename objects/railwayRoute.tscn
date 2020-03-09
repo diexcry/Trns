@@ -2,7 +2,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array(  )
+"points": PoolVector2Array( 0, 0, 0, 0, 865.793, 309.361, 0, 0, 0, 0, 865.324, 357.228, 0, 0, 0, 0, 860.39, 369.881, 0, 0, 0, 0, 848.195, 379.658, 0, 0, 0, 0, 831.271, 381.697, 0, 0, 0, 0, 680.991, 381.289 )
 }
 
 [node name="railwayRoute" type="Path2D"]
