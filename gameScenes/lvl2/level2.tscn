@@ -13,22 +13,22 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -187.757, -213.474, 0, 0, 0, 0, -123.533, -213.474, 0, 0, 0, 0, -5.91788, -213.474 )
 }
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=2]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 16.23, -9.0683, 0, 0, 0, 0, -48.9306, 77.06, 0, 0, 0, 0, -87.0305, 77.8782 )
 }
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( -0.972349, -44.1176, 0.972349, 44.1176, 15.6402, 5.86218, 0, 0, 0, 0, 17.1036, 118.735, 0, 0, 0, 0, 19.1319, 130.167, 0, 0, 0, 0, 31.702, 139.943, 0, 0, 0, 0, 46.4753, 141.781, 0, 0, 0, 0, 87.0858, 142.213, -183.934, 0.531401, 183.934, -0.531401, 317.32, 141.658 )
 }
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 865.793, 309.361, 0, 0, 0, 0, 865.324, 357.228, 0, 0, 0, 0, 860.39, 369.881, 0, 0, 0, 0, 848.195, 379.658, 0, 0, 0, 0, 831.271, 381.697, 0, 0, 0, 0, 677.468, 381.968 )
 }
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=5]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 897.714, 528.34, 0, 0, 0, 0, 897.991, 510.672, 0, 0, 0, 0, 897.991, 485.684, 0, 0, 0, 0, 898.052, 471.173, 0, 0, 0, 0, 782.49, 423.149, 0, 0, 0, 0, 666.928, 378.4 )
 }
@@ -77,19 +77,19 @@ curve = SubResource( 1 )
 [node name="railwayRoute2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 363.819, 237.827 )
 scale = Vector2( 1, 1.01189 )
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 
 [node name="railwayRoute3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 363.819, 239.706 )
-curve = SubResource( 4 )
+curve = SubResource( 3 )
 
 [node name="railwayRoute4" parent="." instance=ExtResource( 3 )]
-curve = SubResource( 5 )
+curve = SubResource( 4 )
 
 [node name="railwayRoute5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 356.294, 34.1067 )
 scale = Vector2( 0.476591, 0.917482 )
-curve = SubResource( 6 )
+curve = SubResource( 5 )
 
 [node name="string" parent="." instance=ExtResource( 5 )]
 margin_left = 365.548

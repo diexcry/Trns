@@ -96,3 +96,14 @@ func _on_Button_button_down():
 	t.set_speed_zero()
 	t.color = color
 
+
+
+func _on_Area2D_area_entered(area):
+	var alarm = preload("res://objects/jam.tscn").instance()
+	get_parent().get_parent().add_child(alarm)
+	alarm.transform.x = transform.x
+	alarm.transform.y = transform.y
+	$"../..".rmTrain(meInstance)
+	$"../..".rmTrain(area.get_parent())
+	area.get_parent().queue_free()
+	queue_free()
