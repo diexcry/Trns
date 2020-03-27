@@ -102,18 +102,6 @@ func setGraph():
 			'turnNode': 3,
 		},
 		{
-			'type':'station',
-			'arrival': false,
-			'dest': false,
-			'rightEnd': true,
-			'me': get_node("station2"),
-			'color':null,
-			'forward':null,
-			'backward':get_node("railwayRoute2/"),
-			'nextNode': null,
-			'prevNode': 1,
-		},
-		{
 			'type':'string',
 			'color':null,
 			'me': get_node("string2"),
@@ -125,6 +113,18 @@ func setGraph():
 			'nextNode': 5,
 			'prevNode': 1,
 			'turnNode': 4,
+		},
+		{
+			'type':'station',
+			'arrival': false,
+			'dest': false,
+			'rightEnd': true,
+			'me': get_node("station2"),
+			'color':null,
+			'forward':null,
+			'backward':get_node("railwayRoute2/"),
+			'nextNode': null,
+			'prevNode': 1,
 		},
 		{
 			'type':'station',
@@ -188,3 +188,6 @@ func _ready():
 # Called every frame. 'delta'is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+
