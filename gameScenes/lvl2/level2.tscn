@@ -26,12 +26,12 @@ _data = {
 
 [sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 677.423, 353.58, 0, 0, 0, 0, 730.473, 353.654, 0, 0, 0, 0, 769.002, 353.844, 0, 0, 0, 0, 809.285, 353.833, 0, 0, 0, 0, 820.746, 346.25, 0, 0, 0, 0, 827.337, 335.668, 0, 0, 0, 0, 828.038, 322.794, 0, 0, 0, 0, 828.345, 309.662, 0, 0, 0, 0, 828.05, 290.169 )
+"points": PoolVector2Array( 0, 0, 0, 0, 677.423, 353.58, 0, 0, 0, 0, 846.387, 353.165, 0, 0, 0, 0, 862.086, 343.881, 0, 0, 0, 0, 867.418, 330.246, 0, 0, 0, 0, 867.524, 285.597 )
 }
 
 [sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 674.894, 380.024, 0, 0, 0, 0, 722.11, 399.962, 0, 0, 0, 0, 746.69, 410.328, 0, 0, 0, 0, 764.698, 418.166, 0, 0, 0, 0, 796.036, 431.436, 0, 0, 0, 0, 896.592, 471.331, 0, 0, 0, 0, 895.008, 526.856 )
+"points": PoolVector2Array( 0, 0, 0, 0, 670.707, 408.525, 0, 0, 0, 0, 776.897, 482.537, 0, 0, 0, 0, 776.264, 527.458 )
 }
 
 [node name="level1" type="Node2D"]
@@ -85,13 +85,13 @@ position = Vector2( 363.819, 239.706 )
 curve = SubResource( 3 )
 
 [node name="railwayRoute4" parent="." instance=ExtResource( 3 )]
-position = Vector2( -167.057, 31.56 )
-scale = Vector2( 1.24663, 0.9913 )
+position = Vector2( 9.64871, 26.1125 )
+scale = Vector2( 0.98578, 1.00647 )
 curve = SubResource( 4 )
 
 [node name="railwayRoute5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 356.294, 34.1067 )
-scale = Vector2( 0.476591, 0.917482 )
+position = Vector2( -11.6194, -89.6563 )
+scale = Vector2( 1.02335, 1.15239 )
 curve = SubResource( 5 )
 
 [node name="string" parent="." instance=ExtResource( 5 )]
