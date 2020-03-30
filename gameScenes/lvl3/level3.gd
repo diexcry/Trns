@@ -36,7 +36,6 @@ func getRandomNumber(from,to):
 
 func get_new_node():
 	while (true):
-		print('get arrival node')
 		var ind = getRandomNumber(0,len(graph)-1)
 		var i = graph[ind]
 		if i['type']  == 'station' and i['arrival']:
@@ -50,7 +49,6 @@ func get_new_node():
 			
 func get_dest_node(col):
 	while (true):
-		print('get dest node')
 		var ind = getRandomNumber(0,len(graph)-1)
 		var i = graph[ind]
 		if i['type']  == 'station' and \
@@ -65,10 +63,9 @@ func get_dest_node(col):
 
 func spawnTrains(count):
 	for i in range(count):
-		print('i:'+str(i))
 		var color = trainColors[getRandomNumber(0,len(trainColors)-1)]
-		while !color['used']:
-			color = trainColors[getRandomNumber(0,len(trainColors)-1)]
+		if color['used']:
+			continue
 		var ndindx = get_new_node()
 		set_train(ndindx,color)
 		var indofget = get_dest_node(color)
@@ -94,9 +91,6 @@ func setGraph():
 		{
 			'type':'string',
 			'color':null,
-			'arrival': true,
-			'rightEnd': true,
-			'dest': false,
 			'me': get_node("string1"),
 			'buttonNode':get_node("string1"),
 			'forward':get_node("railwayRoute3/"),
@@ -109,9 +103,6 @@ func setGraph():
 		},
 		{
 			'type':'string',
-			'arrival': true,
-			'rightEnd': true,
-			'dest': false,
 			'color':null,
 			'me': get_node("string2"),
 			'buttonNode':get_node("string2"),
@@ -126,9 +117,6 @@ func setGraph():
 		{
 			'type':'string',
 			'color':null,
-			'arrival': true,
-			'rightEnd': true,
-			'dest': false,
 			'me': get_node("string3"),
 			'buttonNode':get_node("string3"),
 			'forward':get_node("railwayRoute7/"),
@@ -142,8 +130,8 @@ func setGraph():
 		{
 			'type':'station',
 			'arrival': false,
-			'rightEnd': false,
-			'dest': true,
+			'dest': false,
+			'rightEnd': true,
 			'me': get_node("station2"),
 			'color':null,
 			'forward':null,
@@ -157,7 +145,6 @@ func setGraph():
 			'dest': true,
 			'me': get_node("station3"),
 			'arrival': false,
-			'rightEnd': false,
 			'forward':null,
 			'backward':get_node("railwayRoute4/"),
 			'nextNode': null,
@@ -166,7 +153,6 @@ func setGraph():
 		{
 			'type':'station',
 			'arrival': false,
-			'rightEnd': false,
 			'dest': true,
 			'me': get_node("station4"),
 			'color':null,
@@ -179,7 +165,6 @@ func setGraph():
 			'type':'station',
 			'arrival': false,
 			'dest': true,
-			'rightEnd': false,
 			'me': get_node("station5"),
 			'color':null,
 			'forward':null, #? null
@@ -221,7 +206,7 @@ func set_train(node_index,clr):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setGraph()
-	spawnTrains(2)
+	spawnTrains(1)
 
 
 # Called every frame. 'delta'is the elapsed time since the previous frame.
