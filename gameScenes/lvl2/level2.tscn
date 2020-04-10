@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://gameScenes/lvl2/level2.gd" type="Script" id=1]
 [ext_resource path="res://objects/station.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://objects/string.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gameScenes/lvl1/images/mainRoute.png" type="Texture" id=6]
 [ext_resource path="res://objects/string2.gd" type="Script" id=7]
-[ext_resource path="res://objects/string2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -21,20 +20,20 @@ _data = {
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( -0.972349, -44.1176, 0.972349, 44.1176, 15.6402, 5.86218, 0, 0, 0, 0, 17.1036, 118.735, 0, 0, 0, 0, 19.1319, 130.167, 0, 0, 0, 0, 31.702, 139.943, 0, 0, 0, 0, 46.4753, 141.781, 0, 0, 0, 0, 87.0858, 142.213, -183.934, 0.531401, 183.934, -0.531401, 314.298, 142.273 )
+"points": PoolVector2Array( -0.972349, -44.1176, 0.972349, 44.1176, 15.6402, 5.86218, 0, 0, 0, 0, 17.1036, 118.735, 0, 0, 0, 0, 19.1319, 130.167, 0, 0, 0, 0, 31.702, 139.943, 0, 0, 0, 0, 46.4753, 141.781, 0, 0, 0, 0, 87.0858, 142.213, -183.934, 0.531401, 183.934, -0.531401, 317.32, 141.658 )
 }
 
 [sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 677.423, 353.58, 0, 0, 0, 0, 846.387, 353.165, 0, 0, 0, 0, 862.086, 343.881, 0, 0, 0, 0, 867.418, 330.246, 0, 0, 0, 0, 867.524, 285.597 )
+"points": PoolVector2Array( 0, 0, 0, 0, 865.793, 309.361, 0, 0, 0, 0, 865.324, 357.228, 0, 0, 0, 0, 860.39, 369.881, 0, 0, 0, 0, 848.195, 379.658, 0, 0, 0, 0, 831.271, 381.697, 0, 0, 0, 0, 677.468, 381.968 )
 }
 
 [sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 670.707, 408.525, 0, 0, 0, 0, 776.897, 482.537, 0, 0, 0, 0, 776.264, 527.458 )
+"points": PoolVector2Array( 0, 0, 0, 0, 897.714, 528.34, 0, 0, 0, 0, 897.991, 510.672, 0, 0, 0, 0, 897.991, 485.684, 0, 0, 0, 0, 898.052, 471.173, 0, 0, 0, 0, 782.49, 423.149, 0, 0, 0, 0, 666.928, 378.4 )
 }
 
-[node name="level2" type="Node2D"]
+[node name="level1" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="RouteH" type="NinePatchRect" parent="."]
@@ -85,13 +84,11 @@ position = Vector2( 363.819, 239.706 )
 curve = SubResource( 3 )
 
 [node name="railwayRoute4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 9.64871, 26.1125 )
-scale = Vector2( 0.98578, 1.00647 )
 curve = SubResource( 4 )
 
 [node name="railwayRoute5" parent="." instance=ExtResource( 3 )]
-position = Vector2( -11.6194, -89.6563 )
-scale = Vector2( 1.02335, 1.15239 )
+position = Vector2( 356.294, 34.1067 )
+scale = Vector2( 0.476591, 0.917482 )
 curve = SubResource( 5 )
 
 [node name="string" parent="." instance=ExtResource( 5 )]
@@ -100,11 +97,11 @@ margin_top = 218.869
 margin_right = 377.548
 margin_bottom = 238.869
 
-[node name="string2" parent="." instance=ExtResource( 8 )]
-margin_left = 661.164
-margin_top = 366.703
-margin_right = 673.164
-margin_bottom = 386.703
+[node name="string2" parent="." instance=ExtResource( 5 )]
+margin_left = 667.548
+margin_top = 365.869
+margin_right = 679.548
+margin_bottom = 385.869
 script = ExtResource( 7 )
 
 [node name="MainUI" parent="." instance=ExtResource( 4 )]
