@@ -14,9 +14,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-var nodeNum = 2
-func _on_string2_button_up():
-	if get_parent().graph[2]['turned'] == true:
-		get_parent().graph[2]['turned'] = false
+var nodeNum = 3
+func _on_string3_button_up():
+	if get_parent().graph[3]['turned'] == true:
+		get_parent().graph[3]['turned'] = false
 	else:
-		get_parent().graph[2]['turned'] = true
+		get_parent().graph[3]['turned'] = true
